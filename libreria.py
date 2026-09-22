@@ -106,9 +106,26 @@ que retorne un diccionario con la cantidad de libros por autor.
 """
 
 # Escribe tu código aquí
+def crear_inventario(libros):
+    inventario = {}
+    for libro in libros:
+        autor = libro["autor"]
+        if autor in inventario:
+            inventario[autor] += 1
+        else:
+            inventario[autor] = 1
+    return inventario
 
 # Prueba la función con algunos valores
+biblioteca = [
+    {"titulo": "El hobbit", "autor": "J.R.R. Tolkien"},
+    {"titulo": "La comunidad del anillo", "autor": "J.R.R. Tolkien"},
+    {"titulo": "1984", "autor": "George Orwell"},
+    {"titulo": "Rebelión en la granja", "autor": "George Orwell"},
+    {"titulo": "Dune", "autor": "Frank Herbert"}
+]
 
+print(crear_inventario(biblioteca))
 
 """
 --- Ejercicio 6: Función que Retorna una Lista ---
