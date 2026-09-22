@@ -11,8 +11,15 @@ y que retorne un diccionario con el título y el autor del libro.
 """
 
 # Escribe tu código aquí
-# Prueba la función con algunos valores
+def agregar_libro(titulo, autor):
+    return {
+        "titulo": titulo,
+        "autor": autor
+    }
 
+# Prueba la función con algunos valores
+libro_ejemplo = agregar_libro("El hobbit", "J.R.R. Tolkien")
+print(libro_ejemplo)
 
 """
 --- Ejercicio 2: Función para Listar Libros ---
@@ -21,7 +28,20 @@ que retorne una lista con los títulos de los libros.
 """
 
 # Escribe tu código aquí
+def listar_libros(libros):
+    titulos = []
+    for libro in libros:
+        titulos.append(libro["titulo"])
+    return titulos
+
 # Prueba la función con algunos valores
+biblioteca = [
+    {"titulo": "El hobbit", "autor": "J.R.R. Tolkien"},
+    {"titulo": "1984", "autor": "George Orwell"},
+    {"titulo": "Dune", "autor": "Frank Herbert"}
+]
+
+print(listar_libros(biblioteca))
 
 
 """
@@ -31,8 +51,21 @@ que retorne el diccionario del libro que coincida con el título, o `None` si no
 """
 
 # Escribe tu código aquí
+def buscar_libro(libros, titulo):
+    for libro in libros:
+        if libro["titulo"] == titulo:
+            return libro
+    return None
 
 # Prueba la función con algunos valores
+biblioteca = [
+    {"titulo": "El hobbit", "autor": "J.R.R. Tolkien"},
+    {"titulo": "1984", "autor": "George Orwell"},
+    {"titulo": "Dune", "autor": "Frank Herbert"}
+]
+
+print(buscar_libro(biblioteca, "1984"))
+print(buscar_libro(biblioteca, "Fundación"))
 
 """
 --- Ejercicio 4: Manejo de Errores ---
