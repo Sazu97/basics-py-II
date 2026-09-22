@@ -134,9 +134,23 @@ que retorne una lista con los títulos de los libros escritos por el autor espec
 """
 
 # Escribe tu código aquí
+def libros_por_autor(libros, autor):
+    titulos = []
+    for libro in libros:
+        if libro["autor"] == autor:
+            titulos.append(libro["titulo"])
+    return titulos
 
 # Prueba la función con algunos valores
+biblioteca = [
+    {"titulo": "El hobbit", "autor": "J.R.R. Tolkien"},
+    {"titulo": "La comunidad del anillo", "autor": "J.R.R. Tolkien"},
+    {"titulo": "1984", "autor": "George Orwell"},
+    {"titulo": "Dune", "autor": "Frank Herbert"}
+]
 
+print(libros_por_autor(biblioteca, "J.R.R. Tolkien"))
+print(libros_por_autor(biblioteca, "Isaac Asimov"))
 """
 --- Ejercicio 7: Función que Retorna un Booleano ---
 Crea una función llamada `existe_libro` que acepte una lista de diccionarios `libros` y un `titulo` y 
@@ -144,6 +158,7 @@ que retorne `True` si el libro existe en la lista, y `False` en caso contrario.
 """
 
 # Escribe tu código aquí
+
 
 # Prueba la función con algunos valores
 
