@@ -74,9 +74,30 @@ que intente quitar el libro con el título especificado. Si no se encuentra el l
 """
 
 # Escribe tu código aquí
+def quitar_libro(libros, titulo):
+    try:
+        libro_encontrado = None
+        for libro in libros:
+            if libro["titulo"] == titulo:
+                libro_encontrado = libro
+                break
+        
+        if libro_encontrado is None:
+            raise ValueError(f"El libro '{titulo}' no se encuentra en la lista.")
+        
+        libros.remove(libro_encontrado)
+        print(f"Libro '{titulo}' eliminado con éxito.")
+    except ValueError as error:
+        print(f"Error: {error}")
 
 # Prueba la función con algunos valores
+biblioteca = [
+    {"titulo": "El hobbit", "autor": "J.R.R. Tolkien"},
+    {"titulo": "1984", "autor": "George Orwell"}
+]
 
+quitar_libro(biblioteca, "1984")
+print("Biblioteca actual:", biblioteca)
 
 """
 --- Ejercicio 5: Función que Retorna un Diccionario ---
